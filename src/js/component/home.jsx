@@ -40,9 +40,16 @@ const Home = () => {
 
 
 	const nextMusic = () => {
-		setcancionActive(cancionActive+1);
-		// console.log(cancionActive);
-
+		if (cancionActive>=18) {
+			cancionActive=0;
+			audioRef.current.src = baseUrl+listaCanciones[cancionActive].url;
+			setcancionActive(cancionActive+1);
+			audioRef.current.play();
+		}
+		else{
+			setcancionActive(cancionActive+1);
+		}
+		// console.log(listaCanciones);
 		audioRef.current.src = baseUrl+listaCanciones[cancionActive].url;
 		audioRef.current.play();
 	}
@@ -50,14 +57,23 @@ const Home = () => {
 
 
 	const previousMusic = () => {
-		setcancionActive(cancionActive-1);
-		console.log(cancionActive);
+		if (cancionActive<=1 ) {
+			cancionActive=listaCanciones.length;
+			audioRef.current.src = baseUrl+listaCanciones[cancionActive].url;
+			setcancionActive(listaCanciones.length);
+			audioRef.current.play();
+		}
+		else{
+			setcancionActive(cancionActive-1);
+		}
+		// setcancionActive(cancionActive-1);
+		// console.log(cancionActive);
 		audioRef.current.src = baseUrl+listaCanciones[cancionActive].url;
 		audioRef.current.play();
 	}
 
 	const obtenerCancion = (id,urlcancion) => {
-		console.log(id);
+		// console.log(id);
 		
 		audioRef.current.src = baseUrl+urlcancion;  // 
 		audioRef.current.play();
