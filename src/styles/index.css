@@ -28,9 +28,12 @@ body{
 
 
 #contenedor-lista{
-    width: 400px;
-    height: 500px;
+    width: 350px;
+    height: 450px;
     overflow: auto;
+    background-color: #263342;
+    border-color: #263342;
+    border-radius: 2%; 
 }
 
 #contenedor{
@@ -58,5 +61,11 @@ ol li:hover {
 
 
 .botonera{
+    cursor: pointer;
+}
+
+ol li::marker:hover {
+    background-color: crimson;
+    color: aliceblue;
     cursor: pointer;
 }

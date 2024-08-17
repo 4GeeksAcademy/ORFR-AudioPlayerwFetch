@@ -101,9 +101,9 @@ const Home = () => {
 		<div className="container" id="contenedor">
 			{/* <h1>Hola</h1> */}
 			{/* <button data-bs-toggle="modal" data-bs-target="#staticBackdrop">My Playlist</button> */}
-			<div className="container my-5 py-5">
-						<div className="container my-5 pb-5" id="contenedor-lista">
-							<ol className="text-start-between " id="ol-group">													       {/*()=> para que no se renderice todo con cada map */}
+			<div className="container my-5 py-5 ">
+						<div className="container my-5 pb-5 pt-2 px-1 justify-content-center" id="contenedor-lista">
+							<ol className="text-start px-0 ms-4" id="ol-group">													       {/*()=> para que no se renderice todo con cada map */}
 								{listaCanciones.map((item)=> (<li className="justify-content-between my-3 border-opacity-10" key={item.id} id={item.id} onClick={()=>obtenerCancion(item.id,item.url)}>{item.name} </li>))}			
 							</ol>
 							{/* <button onClick={()=>console.log(listaCanciones)}></button> */}
